@@ -9,7 +9,7 @@ import {
   Coins
 } from 'lucide-react';
 import { apiService } from '../services/apiService';
-import { Transaction } from '../types';
+import type { Transaction } from '../types';
 import { formatDate, getExplorerUrl, getChainColor, formatBalance, shortenAddress } from '../utils';
 
 const Transactions: React.FC = () => {

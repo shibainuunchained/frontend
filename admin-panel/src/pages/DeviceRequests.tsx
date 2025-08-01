@@ -10,7 +10,7 @@ import {
   MapPin
 } from 'lucide-react';
 import { apiService } from '../services/apiService';
-import { DeviceRequest } from '../types';
+import type { DeviceRequest } from '../types';
 import { formatDate, formatRelativeTime } from '../utils';
 
 const DeviceRequests: React.FC = () => {

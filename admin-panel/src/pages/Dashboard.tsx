@@ -26,7 +26,7 @@ import {
   Legend
 } from 'recharts';
 import { apiService } from '../services/apiService';
-import { DashboardStats } from '../types';
+import type { DashboardStats } from '../types';
 import { formatUSD, getChainColor, generateChartColors } from '../utils';
 
 const Dashboard: React.FC = () => {
@@ -231,7 +231,7 @@ const Dashboard: React.FC = () => {
                   paddingAngle={5}
                   dataKey="value"
                 >
-                  {stats.chartData.feeCollection.map((entry, index) => (
+                  {stats.chartData.feeCollection.map((_, index) => (
                     <Cell 
                       key={`cell-${index}`} 
                       fill={generateChartColors(stats.chartData.feeCollection.length)[index]} 

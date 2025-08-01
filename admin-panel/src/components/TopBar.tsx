@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Bell, Refresh } from 'lucide-react';
+import { Menu, Bell, RefreshCw } from 'lucide-react';
 
 interface TopBarProps {
   onToggleSidebar: () => void;
@@ -41,7 +41,7 @@ const TopBar: React.FC<TopBarProps> = ({
             className="p-2 text-dark-300 hover:text-white hover:bg-dark-700 rounded-lg transition-colors disabled:opacity-50"
             title="Refresh data"
           >
-            <Refresh className={`h-5 w-5 ${loading ? 'animate-spin' : ''}`} />
+            <RefreshCw className={`h-5 w-5 ${loading ? 'animate-spin' : ''}`} />
           </button>
         )}
 

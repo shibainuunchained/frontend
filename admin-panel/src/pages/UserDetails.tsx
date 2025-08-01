@@ -12,8 +12,8 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { apiService } from '../services/apiService';
-import { User, WalletBalance } from '../types';
-import { shortenAddress, formatDate, copyToClipboard, formatBalance, formatUSD, getChainColor } from '../utils';
+import type { User, WalletBalance } from '../types';
+import { formatDate, copyToClipboard, formatBalance, formatUSD, getChainColor } from '../utils';
 
 const UserDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -75,11 +75,11 @@ const UserDetails: React.FC = () => {
   }
 
   const walletAddresses = [
-    { chain: 'ETH', address: user.ethAddress, color: 'blue' },
-    { chain: 'BTC', address: user.btcAddress, color: 'orange' },
-    { chain: 'TRX', address: user.tronAddress, color: 'red' },
-    ...(user.bnbAddress ? [{ chain: 'BNB', address: user.bnbAddress, color: 'yellow' }] : []),
-    ...(user.maticAddress ? [{ chain: 'MATIC', address: user.maticAddress, color: 'purple' }] : [])
+    { chain: 'ETH', address: user.ethAddress },
+    { chain: 'BTC', address: user.btcAddress },
+    { chain: 'TRX', address: user.tronAddress },
+    ...(user.bnbAddress ? [{ chain: 'BNB', address: user.bnbAddress }] : []),
+    ...(user.maticAddress ? [{ chain: 'MATIC', address: user.maticAddress }] : [])
   ];
 
   return (
@@ -177,7 +177,7 @@ const UserDetails: React.FC = () => {
       <div className="card">
         <h3 className="text-lg font-semibold text-white mb-4">Wallet Addresses</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {walletAddresses.map(({ chain, address, color }) => (
+          {walletAddresses.map(({ chain, address }) => (
             <div key={chain} className="p-4 bg-dark-700 rounded-lg">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center space-x-2">

@@ -11,7 +11,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { apiService } from '../services/apiService';
-import { User } from '../types';
+import type { User } from '../types';
 import { shortenAddress, formatDate, copyToClipboard } from '../utils';
 
 const Users: React.FC = () => {
